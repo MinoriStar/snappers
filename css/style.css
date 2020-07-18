@@ -1,0 +1,89 @@
+@@charset "UTF-8";
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #cccccc;
+  color: #333333;  /* テキストの色の指定 */
+  font-size: 15px;
+  line-height: 2;
+}
+
+p,h1,h2,h3,h4,h5,h6 {
+  margin-top: 0;  /* デフォルトである余白をなくす */
+}
+
+img {
+  vertical-align: bottom;  /* 画像下部の余白をなくす */
+}
+
+ul {
+  margin: 0;
+  padding: 0;    /* リスト項目の余白なくす */
+}
+
+a {
+  color: #3583aa;  /* 訪問前後でリンク文字の色を指定する */
+  text-decoration: none;
+}
+
+a:visited {
+  color: #788d98;
+}
+
+a:hover {
+  text-decoration: underline; /* リンク文字にマウスポインタが乗ったときだけ下線が現れる */
+}
+
+header {
+  width: 960px; /*横幅の基本サイズ*/
+  height: 100px;
+  margin:0 auto; /* 中央揃え */
+}
+
+.logo {
+  float: left;
+  margin-top: 50px;
+}
+
+.global-nav {
+  float: right; /*　ボックスを左右に寄せその反対側に後続の内容を流し込む　値はnone,left,right,inherit */
+  margin-top: 60px;
+}
+
+.global-nav li { /*　メニュー項目を横に並べる　*/
+  float: left;
+  margin: 0 20px;
+  font-size: 20px;
+  list-style: none; /* メニュー項目にデフォルトで表示される・のアイコンを非表示にする　*/
+  font-family: 'Bitter', serif;
+}
+
+.global-nav li a { /*メニュー文字のリンクに色を設定 */
+  color: #ffffff;
+}
+
+.global-nav li a:hover {
+  border-bottom: 2px solid #ffffff; /* メニュー文字の下線を白の実線に設定 */
+  padding-bottom: 3px;
+  text-decoration: none; /* a:hoverで先に設定された下線を解除することで二重線を解消　*/
+}
+
+#wrap {
+  clear: both;　/*ヘッダー内要素に指定したfloatプロパティはそれ以降の要素を回り込ませてしまうため解除する　*/
+}
+
+.content {
+  width: 960px;
+  margin: 0 auto;  /* コンテンツエリアを中央揃えにする　*/
+}
+
+footer {
+  text-align: center;
+  color: #ffffff;
+  padding: 20px 0;
+}
+
+footer small {
+  font-size: 12px;
+}
