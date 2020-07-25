@@ -1,4 +1,4 @@
-@@charset "UTF-8";
+@charset "UTF-8";
 
 body {
   margin: 0;
@@ -71,6 +71,9 @@ header {
 
 #wrap {
   clear: both;　/*ヘッダー内要素に指定したfloatプロパティはそれ以降の要素を回り込ませてしまうため解除する　*/
+  background-color: #ffffff;
+  margin-top: 220px;/* コンテンツエリアの上部に余白 */
+  padding: 35px 0; /* コンテンツエリアの内側に余白 */
 }
 
 .content {
@@ -86,4 +89,134 @@ footer {
 
 footer small {
   font-size: 12px;
+}
+
+#index h1 {  /*インデックスページのh1だけに装飾を設定 */
+  font-size: 100px;
+  line-height: 1; /* 行間の設定　*/
+  color: #ffffff;
+  font-family: 'Bitter', serif;
+  margin-bottom: 50px;
+  border: none; /* h1要素の下線を解除 */
+}
+
+#index .content { /*見出し上部に余白の設定*/
+  margin-top: 150px;
+}
+
+#index p { /*本文の文字サイズと色*/
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.btn a { /*　ボタンを装飾 */
+  background-color: #009cd3;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: 'Bitter', serif;
+  width: 185px; /* a要素はインライン要素のためテキストの一部として扱われルため改行や幅の指定ができないことからdisplay: block;でブロック要素にする*/
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  margin-top: 20px;
+  border-radius: 5px; /*要素の角を丸くする*/
+  border: 3px solid #009cd3; /* 背景色と同じ枠線をつける*/
+}
+
+.btn a:hover { /* マウスを置いた時のデザイン */
+  text-decoration: none; /* マウスを置いたときに表示される下線を消す */
+  background-color: #ffffff;
+  color: #009cd3;
+}
+
+#index footer { /* 子孫セレクタをしようしトップページの仕様だけ指定 */
+  width: 960px;
+  margin: 0 auto; /* 中央寄せ */
+  text-align: left;
+  margin-top: 150px;
+  background-color: transparent;　/*透明*/
+}
+
+#index { /* 背景画像を設定する */
+  background-image: url(../../HTML_CSS_WebDesign/images/bg-index.jpg); /* ../../で２階層上がった */
+  background-repeat: no-repeat; /* 画像がタイル状に表示されないようにするために繰り返しを制御する */
+  background-position: center center; /* 画像の表示開始位置を設定、今回は上下左右を中央に設置 */
+  background-attachment: fixed; /* 上記のままでは要素と一緒に動く特性からブラウザの高さにおける中央に固定されていない。コンテンツの高さに関わらず固定する */
+  background-size: cover; /* 背景画像の大きさの指定、coverは縦横比を保持したまま領域を完全に覆う　*/
+}
+#about {
+  background-image: url(../../HTML_CSS_WebDesign/images/bg-about.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-attachment: fixed;
+  background-size: 100% auto; /* 背景画像がページ全体(cover)ではなく経歴の領域に収まるように要素の長辺に合わせて画像が拡大縮小される */
+}
+
+.main-center {
+  width: 940px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: 'Bitter', serif;
+  font-size: 36px;
+  border-bottom: 1px solid #cccccc;
+}
+
+h2 {
+  font-family: 'Bitter', serif;
+  font-size: 24px;
+}
+
+.icon:before { /* 中見出しの飾りを設定 */
+  content: "";
+  padding-right: 10px; /* 見出しの右側に余白を作る */
+  border-left: 7px solid #9cb4a4; /* 見出しの左側に7pxの幅のボーダーを引く */
+}
+
+#about .profile-txt {
+  width: 540px;
+  float: left;
+}
+
+#about .profile-txt span {
+  font-weight: bold;
+}
+
+#about .profile-image {
+  float: right;
+}
+
+.clearfix:after { /* 擬似要素を作りそれを杭のようにして親要素に高さを持たせる。*/
+  content:"";/* section末尾(after)に空ボックスが生成される */
+  display: block;/* 但し上記ボックスはインライン要素扱いのためblockを指定しブロックレベル要素へ変更することで見出しを但しい位置に表示させる */
+  clear: both;/* 最後に回り込みを解除する */
+}
+
+section {
+  margin-bottom: 35px;
+}
+
+#about .career th {
+  width: 240px;
+  background-color: #f0f0f0;
+  padding: 12px; 0;
+  border: 1px solid #cccccc;/* 罫線の設定 */
+}
+#about .career td {
+  width: 660px;
+  background-color: #f0f0f0;
+  padding: 12px 0 12px 40px;
+  border: 1px solid #cccccc; /* 罫線の設定 */
+}
+
+table {
+  border-spacing: 0;/* セルの隙間の指定 */
+  border-collapse: collapse;/* collapse:隣り合ったセルのボーダーを重ねて表示　separate:隣り合ったセルのボーダーをそれぞれ表示 */
+}
+
+#index #wrap { /* about.html　がindex.html（トップページ）に影響を与えている箇所の修正 */
+  background-color: transparent; /* transparent:透明 */
+  margin-top: 0;
+  padding: 0;
 }
